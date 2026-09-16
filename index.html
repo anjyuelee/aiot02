@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李安爵 | Lee An Jyue</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 10vw, 5rem);
+      letter-spacing: 0.1em;
+    }
+    .en {
+      margin: 0.5rem 0 0;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .clock {
+      margin-top: 3rem;
+    }
+    #date {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      color: var(--muted);
+    }
+    #time {
+      margin-top: 0.5rem;
+      font-size: clamp(2.5rem, 12vw, 6rem);
+      font-weight: 300;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>李安爵</h1>
+    <p class="en">Lee An Jyue</p>
+    <div class="clock">
+      <div id="date"></div>
+      <div id="time"></div>
+    </div>
+  </main>
+  <script>
+    const dateEl = document.getElementById('date');
+    const timeEl = document.getElementById('time');
+    const dateFmt = new Intl.DateTimeFormat('zh-TW', {
+      year: 'numeric', month: 'long', day: 'numeric', weekday: 'long'
+    });
+    const timeFmt = new Intl.DateTimeFormat('zh-TW', {
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+    });
+
+    function update() {
+      const now = new Date();
+      dateEl.textContent = dateFmt.format(now);
+      timeEl.textContent = timeFmt.format(now);
+    }
+
+    update();
+    setInterval(update, 1000);
+  </script>
+</body>
+</html>
