@@ -3,7 +3,24 @@
 一個純 HTML / CSS / JavaScript 的個人入口網站，顯示姓名、現在時間、所在地區與目前天氣。
 本專案為 AIoT 課程第二堂課的練習，透過 GitHub Pages 部署。
 
-🔗 線上預覽：<https://anjyuelee.github.io/aiot02/>
+## 連結
+
+- 🌐 **Live Demo**：<https://anjyuelee.github.io/aiot02/>
+- 📦 **儲存庫**：<https://github.com/anjyuelee/aiot02>
+
+## 畫面截圖
+
+| 主畫面（手機） | 地區選擇面板 |
+|:---:|:---:|
+| ![手機主畫面](docs/screenshots/mobile.jpg) | ![地區選擇面板](docs/screenshots/dialog.jpg) |
+
+背景主題依天氣自動切換（由左至右：白天晴、白天多雲、夜晚、雨）：
+
+![四組主題](docs/screenshots/themes.jpg)
+
+桌機版面：
+
+![桌機畫面](docs/screenshots/desktop.jpg)
 
 ## 功能
 
